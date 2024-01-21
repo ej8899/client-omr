@@ -1,0 +1,152 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
+  "height": 285,
+  "width": 254,
+  "hideSelection": false,
+  "fillHorizontally": true,
+  "formatter": {
+    "elmType": "div",
+    "attributes": {
+      "class": "sp-card-container"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "attributes": {
+          "class": "sp-card-defaultClickButton"
+        },
+        "customRowAction": {
+          "action": "defaultClick"
+        }
+      },
+      {
+        "elmType": "div",
+        "attributes": {
+          "class": "ms-bgColor-white sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "sp-card-displayColumnContainer"
+            },
+            "children": [
+              {
+                "elmType": "p",
+                "attributes": {
+                  "class": "ms-fontColor-neutralSecondary sp-card-label"
+                },
+                "txtContent": "[!Title.DisplayName]"
+              },
+              {
+                "elmType": "p",
+                "attributes": {
+                  "title": "[$Title]",
+                  "class": "ms-fontColor-neutralPrimary sp-card-content sp-card-highlightedContent",
+                  "role": "heading",
+                  "aria-level": "3"
+                },
+                "txtContent": "=if ([$Title] == '', '–', [$Title])"
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "sp-card-displayColumnContainer"
+            },
+            "children": [
+              {
+                "elmType": "p",
+                "attributes": {
+                  "class": "ms-fontColor-neutralSecondary sp-card-label"
+                },
+                "txtContent": "[!Meeting.DisplayName]"
+              },
+              {
+                "elmType": "div",
+                "attributes": {
+                  "class": "sp-card-content sp-card-formatterRef"
+                },
+                "children": [
+                  {
+                    "columnFormatterReference": "[$Meeting]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "sp-card-displayColumnContainer"
+            },
+            "children": [
+              {
+                "elmType": "p",
+                "attributes": {
+                  "class": "ms-fontColor-neutralSecondary sp-card-label"
+                },
+                "txtContent": "[!Order0.DisplayName]"
+              },
+              {
+                "elmType": "p",
+                "attributes": {
+                  "title": "=if ([$Order0.displayValue] == '', '–', [$Order0.displayValue])",
+                  "class": "ms-fontColor-neutralPrimary sp-card-content "
+                },
+                "txtContent": "=if ([$Order0.displayValue] == '', '–', [$Order0.displayValue])"
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "sp-card-displayColumnContainer"
+            },
+            "children": [
+              {
+                "elmType": "p",
+                "attributes": {
+                  "class": "ms-fontColor-neutralSecondary sp-card-label"
+                },
+                "txtContent": "[!Task_x0020_Link.DisplayName]"
+              },
+              {
+                "elmType": "p",
+                "attributes": {
+                  "title": "[$Task_x0020_Link]",
+                  "class": "ms-fontColor-neutralPrimary sp-card-content "
+                },
+                "txtContent": "=if ([$Task_x0020_Link] == '', '–', [$Task_x0020_Link])"
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "sp-card-lastTextColumnContainer"
+            },
+            "children": [
+              {
+                "elmType": "p",
+                "attributes": {
+                  "class": "ms-fontColor-neutralSecondary sp-card-label"
+                },
+                "txtContent": "[!Prep.DisplayName]"
+              },
+              {
+                "elmType": "p",
+                "attributes": {
+                  "title": "=if ([$Prep.displayValue] == '', '–', [$Prep.displayValue])",
+                  "class": "ms-fontColor-neutralPrimary sp-card-content "
+                },
+                "txtContent": "=if ([$Prep.displayValue] == '', '–', [$Prep.displayValue])"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

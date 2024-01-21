@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "additionalRowClass": {
+    "operator": ":",
+    "operands": [
+      {
+        "operator": "!=",
+        "operands": [
+          "[$IncludeUpcoming_x003f_]",
+          true
+        ]
+      },
+      "sp-css-backgroundColor-BgCoral sp-css-color-CoralFont",
+      {
+        "operator": ":",
+        "operands": [
+          {
+            "operator": "==",
+            "operands": [
+              "[$Status]",
+              "7-Closed"
+            ]
+          },
+          "sp-css-backgroundColor-BgMintGreen sp-css-color-MintGreenFont",
+          {
+            "operator": ":",
+            "operands": [
+              {
+                "operator": "||",
+                "operands": [
+                  {
+                    "operator": "==",
+                    "operands": [
+                      "[$Status]",
+                      "4-Ready for Presentation"
+                    ]
+                  },
+                  {
+                    "operator": "==",
+                    "operands": [
+                      "[$Status]",
+                      "5-Awaiting ExCo Approval"
+                    ]
+                  }
+                ]
+              },
+              "sp-field-bold sp-css-color-PurpleText",
+              ""
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

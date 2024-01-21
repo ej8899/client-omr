@@ -15,6 +15,10 @@
         "attributes": {
           "class": "sp-card-defaultClickButton"
         },
+        "style": {
+          
+          
+        },
         "customRowAction": {
           "action": "defaultClick"
         }
@@ -23,6 +27,10 @@
         "elmType": "div",
         "attributes": {
           "class": "=if ([$Title] == 'test01' , 'ms-bgColor-themeTertiary' , if ([$Title] == 'test02' , 'ms-bgColor-greenLight' , 'ms-bgColor-gray30')) + ' ms-bgColor-success--hover sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer'"
+        },
+        "style": {
+          "margin": "4px",
+          "margin-bottom": "8px"
         },
         "children": [
           {
@@ -36,6 +44,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
+                
                 "txtContent": "[!Assigned.DisplayName]"
               },
               {
@@ -232,7 +241,12 @@
                 "elmType": "p",
                 "attributes": {
                   "title": "[$Priority]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content "
+                  "class": "ms-fontColor-neutralPrimary sp-card-content  "
+                },
+                "style": {
+                  "background-color": "red",
+                  "padding": "4px 8px",
+                  "border-radius": "20px"
                 },
                 "txtContent": "=if ([$Priority] == '', '–', [$Priority])"
               }

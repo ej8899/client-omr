@@ -25,7 +25,7 @@
           "background-color": "=if ([$Meeting] == 'ExCo Call' && [$Prep] != true, '#fed8b1', if ([$Meeting] == 'ExCo Meeting' && [$Prep] != true , '#fed8b1' , '#d8d8d8'))"
         },
         "attributes": {
-          "class": "sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer"
+          "class": "ms-bgColor-white sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer"
         },
         "children": [
           {
@@ -116,12 +116,32 @@
                 "txtContent": "[!Task_x0020_Link.DisplayName]"
               },
               {
-                "elmType": "p",
+                "elmType": "div",
                 "attributes": {
-                  "title": "[$Task_x0020_Link]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content "
+                  "class": "sp-card-content "
                 },
-                "txtContent": "=if ([$Task_x0020_Link] == '', '–', [$Task_x0020_Link])"
+                "children": [
+                  {
+                    "elmType": "p",
+                    "txtContent": "=if(length([$Task_x0020_Link]) == 0, '–', '')"
+                  },
+                  {
+                    "forEach": "lookupIterator in [$Task_x0020_Link]",
+                    "elmType": "a",
+                    "attributes": {
+                      "target": "_blank",
+                      "class": "ms-fontColor-neutralPrimary sp-card-urlContent sp-card-lookupInlineValues sp-card-keyboard-focusable ",
+                      "href": {
+                        "operator": "+",
+                        "operands": [
+                          "&ID=",
+                          "[$lookupIterator.lookupId]"
+                        ]
+                      }
+                    },
+                    "txtContent": "[$lookupIterator.lookupValue]"
+                  }
+                ]
               }
             ]
           },

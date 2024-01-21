@@ -22,10 +22,10 @@
       {
         "elmType": "div",
         "style": {
-          "background-color": "=if ([$Meeting] == 'ExCo Call' && [$Prep] != true, '#fed8b1', if ([$Meeting] == 'ExCo Meeting' && [$Prep] != true , '#fed8b1' , '#d8d8d8'))"
+          "background-color": "=if ([$Meeting] == 'ExCo Call' && [$Prep] != true, 'red' , if ([$Meeting] == 'ExCo Meeting' && [$Prep] != true , 'blue' , 'gray')) + ' sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer '"
         },
         "attributes": {
-          "class": "sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer"
+          "class": "=if ([$Meeting] == 'ExCo Call' && [$Prep] != true, 'ms-bgColor-orangeLighter' , if ([$Meeting] == 'ExCo Meeting' && [$Prep] != true , 'ms-bgColor-orangeLighter' , 'ms-bgColor-gray30')) + ' sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer '"
         },
         "children": [
           {

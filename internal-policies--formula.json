@@ -1,0 +1,10 @@
+=IF(Progress="In Progress",20,
+IF(Progress="HR",50,
+IF(Progress="Project Team",60,
+IF(Progress="Not Started",0,
+IF(Progress="CEO Review",75,
+IF(Progress="Legal Review",85,
+IF(Progress="EXCO Review",95,
+IF(Progress="Approved",100,
+IF(Progress="Blocked",10,)))))))))
+

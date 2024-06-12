@@ -1,0 +1,14 @@
+// note default value text and default value: -
+
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "txtContent": "=if([$RenewalDate] > (@now + 21038400000), 'GOOD', if([$RenewalDate] > (@now + 5259600000), 'Expiring', if([$RenewalDate] > @now, 'Expiring Soon', 'Expired')))",
+  "style": {
+    "background-color": "=if([$RenewalDate] > (@now + 21038400000), 'Green', if([$RenewalDate] > (@now + 5259600000), 'Yellow', if([$RenewalDate] > @now, 'Orange', 'Red')))",
+    "color": "black",
+    "font-size": "1em",
+    "font-weight": "bold",
+    "justify-content": "center"
+  }
+}

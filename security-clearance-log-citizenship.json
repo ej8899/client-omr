@@ -1,0 +1,117 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "flex-wrap": "wrap",
+    "border-radius": "30px",
+    "padding": "1px 0px",
+    "margin": "5px",
+    "min-height": "22px",
+    "display": "flex",
+    "align-items": "center",
+    "background-color": "=if(Number(@currentField) == 0, 'yellow', 'inherit')"
+  },
+  "children": [
+    {
+      "forEach": "__INTERNAL__ in @currentField",
+      "elmType": "div",
+      "style": {
+        "box-sizing": "border-box",
+        "padding": "4px 8px 5px 8px",
+        "overflow": "hidden",
+        "text-overflow": "ellipsis",
+        "display": "flex",
+        "border-radius": "16px",
+        "height": "24px",
+        "align-items": "center",
+        "white-space": "nowrap",
+        "margin": "4px 4px 4px 4px"
+      },
+      "attributes": {
+        "class": {
+          "operator": ":",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                "[$__INTERNAL__]",
+                "Canadian"
+              ]
+            },
+            "sp-css-backgroundColor-BgRed sp-css-borderColor-WhiteFont sp-css-color-WhiteFont",
+            {
+              "operator": ":",
+              "operands": [
+                {
+                  "operator": "==",
+                  "operands": [
+                    "[$__INTERNAL__]",
+                    "American"
+                  ]
+                },
+                "sp-css-backgroundColor-BgDarkBlue sp-css-borderColor-WhiteFont sp-css-color-WhiteFont",
+                {
+                  "operator": ":",
+                  "operands": [
+                    {
+                      "operator": "==",
+                      "operands": [
+                        "[$__INTERNAL__]",
+                        "France"
+                      ]
+                    },
+                    "sp-css-backgroundColor-BgLavender sp-css-borderColor-WhiteFont sp-css-color-WhiteFont",
+                    {
+                      "operator": ":",
+                      "operands": [
+                        {
+                          "operator": "==",
+                          "operands": [
+                            "[$__INTERNAL__]",
+                            "UK"
+                          ]
+                        },
+                        "sp-css-backgroundColor-BgDarkPink sp-css-borderColor-WhiteFont sp-css-color-WhiteFont",
+                        {
+                          "operator": ":",
+                          "operands": [
+                            {
+                              "operator": "==",
+                              "operands": [
+                                "[$__INTERNAL__]",
+                                "Ecuadorian"
+                              ]
+                            },
+                            "sp-css-backgroundColor-BgCyan sp-css-borderColor-CyanFont sp-css-color-CyanFont",
+                            {
+                              "operator": ":",
+                              "operands": [
+                                {
+                                  "operator": "==",
+                                  "operands": [
+                                    "[$__INTERNAL__]",
+                                    "Jordanian"
+                                  ]
+                                },
+                                "sp-css-backgroundColor-BgOrange sp-css-borderColor-WhiteFont sp-css-color-WhiteFont",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "style": {
+          "background-color": "=if(Number(@currentField) == 0, 'yellow', 'red')"
+        }
+      },
+      "txtContent": "[$__INTERNAL__]"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "txtContent": "=if(Number(@currentField) != 0, toLocaleDateString(@currentField), '--')",
+  "style": {
+    "background-color": "=if([$ClearanceStatus] == 'Cleared' && Number(@currentField) == 0, 'yellow', if([$ClearanceStatus] == 'Cleared' && (Number(@now) - Number([$LastTrainingDate])) / (1000 * 60 * 60 * 24) >= 360, 'orange', 'inherit'))",
+    "font-size": "1em",
+    "justify-content": "center",
+    "border-radius": "30px",
+    "padding": "1px 0px",
+    "margin": "5px",
+    "min-height": "22px",
+    "display": "flex",
+    "align-items": "center"
+  }
+}

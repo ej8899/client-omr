@@ -26,7 +26,20 @@
         {
           "elmType": "div",
           "style": {
-            "background-color": "=if(@currentField < 1, 'transparent', if(@currentField <= 10, '#757575', if(@currentField <= 20, '#4f6bed', if(@currentField <= 50, '#4f6bed', if(@currentField <= 60, '#ca5010', if(@currentField <= 75, '#038387', if(@currentField <= 80, '#373277', if(@currentField <= 95, '#004e8c', if(@currentField <= 100, '#498205', '#d13438')))))))))",
+            "background-color": "
+              =if([$Progress]=='XXXX - Complete', '#757575', 
+              if([$Progress]=='Future Requirement', '#757575', 
+              if([$Progress]=='Paused', '#757575', 
+              if([$Progress]=='XXXX - Complete', '#757575',
+              if(@currentField < 1, 'transparent', 
+              if(@currentField <= 10, '#757575', 
+              if(@currentField <= 20, '#4f6bed', 
+              if(@currentField <= 50, '#4f6bed', 
+              if(@currentField <= 60, '#ca5010', 
+              if(@currentField <= 75, '#038387', 
+              if(@currentField <= 80, '#373277', 
+              if(@currentField <= 95, '#004e8c', 
+              if(@currentField <= 100, '#498205', '#d13438')))))))))))",
             "width": "=if(@currentField > 0, ( @currentField) + '%', '0%')",
             "height": "100%",
             "border-radius": "0px 10px 10px 0px"

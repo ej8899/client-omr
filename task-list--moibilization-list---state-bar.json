@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "span",
+      "txtContent": "=( @currentField) + '%'",
+      "style": {
+        "padding-left": "2px",
+        "white-space": "nowrap",
+        "position": "absolute",
+        "z-index": "1"
+      }
+    },
+    {
+      "elmType": "div",
+      "style": {
+        "background-color": "#e0e0e0",
+        "height": "22px",
+        "width": "100%",
+        "border-radius": "0px 10px 10px 0px",
+        "position": "relative",
+        "border-left": "2px solid #e0e0e0"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "background-color": "=if(@currentField < 1, 'transparent', if(@currentField <= 10, '#757575', if(@currentField <= 20, '#4f6bed', if(@currentField <= 50, '#4f6bed', if(@currentField <= 60, '#ca5010', if(@currentField <= 75, '#038387', if(@currentField <= 80, '#373277', if(@currentField <= 95, '#004e8c', if(@currentField <= 100, '#498205', '#d13438')))))))))",
+            "width": "=if(@currentField > 0, ( @currentField) + '%', '0%')",
+            "height": "100%",
+            "border-radius": "0px 10px 10px 0px"
+          }
+        }
+      ]
+    }
+  ],
+  "attributes": {
+    "role": "progressbar",
+    "aria-valuenow": "@currentField",
+    "aria-valuemin": "0",
+    "aria-valuemax": "100"
+  },
+  "style": {
+    "position": "relative",
+    "max-height": "22px",
+    "color": "white",
+    "box-sizing": "border-box"
+  }
+}
